@@ -1,7 +1,7 @@
 from random import randint
 
 # define selections in a tuple
-options = ('rock', 'paper', 'scissors', 'double scissors')
+options = ('Rock', 'Paper', 'Scissors', 'Double Scissors')
 
 
 def computerChoice():
@@ -11,43 +11,34 @@ def computerChoice():
     return computer
 
 
-player = 'paper'
-
-
 def play(computer, player):
     ''' if statement to determine the outcome '''
 
-    print('Computer chose {}'.format(computer))
-    print('You chose {}'.format(player))
-
     if player == computer:
         result = 'Draw!'
-    elif player == 'rock' and computer == 'paper':
+    elif player == 'Rock' and computer == 'Paper':
         result = 'Computer wins!'
-    elif player == 'rock' and computer == 'scissors':
+    elif player == 'Rock' and computer == 'Scissors':
         result = 'You win!'
-    elif player == 'rock' and computer == 'double scissors':
+    elif player == 'Rock' and computer == 'Double Scissors':
         result = 'You win!'
-    elif player == 'paper' and computer == 'rock':
+    elif player == 'Paper' and computer == 'Rock':
         result = 'You win!'
-    elif player == 'paper' and computer == 'scissors':
+    elif player == 'Paper' and computer == 'Scissors':
         result = 'Computer wins!'
-    elif player == 'paper' and computer == 'double scissors':
+    elif player == 'Paper' and computer == 'Double Scissors':
         result = 'Computer wins!'
-    elif player == 'scissors' and computer == 'rock':
+    elif player == 'Scissors' and computer == 'Rock':
         result = 'Computer wins!'
-    elif player == 'scissors' and computer == 'paper':
+    elif player == 'Scissors' and computer == 'Paper':
         result = 'You win!'
-    elif player == 'scissors' and computer == 'double scissors':
+    elif player == 'Scissors' and computer == 'Double Scissors':
         result = 'Computer wins!'
-    elif player == 'double scissors' and computer == 'rock':
+    elif player == 'Double Scissors' and computer == 'Rock':
         result = 'Computer wins!'
-    elif player == 'double scissors' and computer == 'paper':
+    elif player == 'Double Scissors' and computer == 'Paper':
         result = 'You win!'
-    elif player == 'double scissors' and computer == 'scissors':
-        result = 'Computer wins!'
+    elif player == 'Double Scissors' and computer == 'Scissors':
+        result = 'You win!'
 
     return result
-
-
-print(play(computerChoice(), player))
