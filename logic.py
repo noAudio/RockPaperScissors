@@ -11,14 +11,8 @@ def computerChoice():
     return computer
 
 
-player = 'paper'
-
-
 def play(computer, player):
     ''' if statement to determine the outcome '''
-
-    print('Computer chose {}'.format(computer))
-    print('You chose {}'.format(player))
 
     if player == computer:
         result = 'Draw!'
@@ -48,6 +42,3 @@ def play(computer, player):
         result = 'Computer wins!'
 
     return result
-
-
-print(play(computerChoice(), player))
