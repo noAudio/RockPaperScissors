@@ -35,7 +35,7 @@
           <div>
             <label for="{{ option }}">
               <image type="image" src="{{ url_for('static', filename='src/' + option + '.jpg') }}">
-              <input type="submit" class="check-input" value="{{ option }}" id="{{ option }}" name="game-option">
+                <input type="submit" class="check-input" value="{{ option }}" id="{{ option }}" name="game-option">
             </label>
           </div>
           {% endfor %}
@@ -48,30 +48,29 @@
     <section class="card-slot">
 
       <section class="placement">
-      {% if player %}
+        {% if player %}
         <div id="dropzone" class="dropzone">
-          <img src="{{ url_for('static', filename='src/' + player + '.jpg') }}" width="100%" class="dropzone" id="dropzone">
+          <img src="{{ url_for('static', filename='src/' + player + '.jpg') }}" width="100%" class="dropzone"
+            id="dropzone">
         </div>
-      {% else %}
+        {% else %}
         <div id="dropzone" class="dropzone">
           <img src="{{ url_for('static', filename='src/placers 2.jpg') }}" width="100%" class="dropzone" id="dropzone">
         </div>
-      {% endif %}
+        {% endif %}
         <div>
           <img src="{{ url_for('static', filename='src/exchange.jpg') }}" class="resize">
         </div>
         {% if computer %}
         <div class="dropzone">
-          <img src="{{ url_for('static', filename='src/' + computer + '.jpg') }}" width="100%" class="dropzone" id="dropzone">
+          <img src="{{ url_for('static', filename='src/' + computer + '.jpg') }}" width="100%" class="dropzone"
+            id="dropzone">
         </div>
-      {% else %}
+        {% else %}
         <div class="dropzone">
           <img src="{{ url_for('static', filename='src/placers 2.jpg') }}" width="100%" class="dropzone">
         </div>
-      {% endif %}
-        <div class="timing-box">
-          <span id="timer" class="timer">00:05s</span>
-        </div>
+        {% endif %}
       </section>
     </section>
     <!-- /The rock paper scissor section -->
@@ -80,9 +79,9 @@
     <section class="computer">
       <section class="player-section">
         {% for option in options %}
-          <div>
-            <img src="{{ url_for('static', filename='src/' + option + '.jpg') }}" id="{{ option }}">
-          </div>
+        <div>
+          <img src="{{ url_for('static', filename='src/' + option + '.jpg') }}" id="{{ option }}">
+        </div>
         {% endfor %}
       </section>
       <header>
