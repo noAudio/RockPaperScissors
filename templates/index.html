@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>No Audio | RPS Gaming</title>
+  <meta name="description" content="Simple Game">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel=" stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+</head>
+
+<body style="background-image: url('{{ url_for('static', filename='src/bg-img.jpg') }}')">
+  <!-- Score display -->
+  {% if outcome %}
+  <div class=" score-status">
+    <span class="wins"> {{ outcome }} </span>
+  </div>
+  {% endif %}
+  <!-- /Score display -->
+
+  <!-- The main website -->
+  <div class="container">
+
+    <!-- The player section -->
+    <form action="/play" method="POST">
+      <section class="player">
+        <header>
+          <div class="player-btn">
+            <span> Player 1 </span>
+          </div>
+        </header>
+        <section class="player-section">
+          {% for option in options %}
+          <div>
+            {# <input class="check-input" type="radio" aria-label="Radio button for following text input" name="game-option" value="{{ option }}" id="{{ option }}"> #}
+            <label for="{{ option }}">
+              <image type="image" src="{{ url_for('static', filename='src/' + option + '.jpg') }}">
+              <input type="submit" class="check-input" value="{{ option }}" id="{{ option }}" name="game-option">
+            </label>
+          </div>
+          {% endfor %}
+        </section>
+      </section>
+    </form>
+    <!-- /The player section -->
+
+    <!-- The rock paper scissor section -->
+    <section class="card-slot">
+
+      <section class="placement">
+      {% if player %}
+        <div id="dropzone" class="dropzone">
+          <img src="{{ url_for('static', filename='src/' + player + '.jpg') }}" width="100%" class="dropzone" id="dropzone">
+        </div>
+      {% else %}
+        <div id="dropzone" class="dropzone">
+          <img src="{{ url_for('static', filename='src/placers 2.jpg') }}" width="100%" class="dropzone" id="dropzone">
+        </div>
+      {% endif %}
+        <div>
+          <img src="{{ url_for('static', filename='src/exchange.jpg') }}" class="resize">
+        </div>
+        {% if computer %}
+        <div class="dropzone">
+          <img src="{{ url_for('static', filename='src/' + computer + '.jpg') }}" width="100%" class="dropzone" id="dropzone">
+        </div>
+      {% else %}
+        <div class="dropzone">
+          <img src="{{ url_for('static', filename='src/placers 2.jpg') }}" width="100%" class="dropzone">
+        </div>
+      {% endif %}
+        <div class="timing-box">
+          <span id="timer" class="timer">00:05s</span>
+        </div>
+      </section>
+    </section>
+    <!-- /The rock paper scissor section -->
+
+    <!-- The computer section -->
+    <section class="computer">
+      <section class="player-section">
+        {% for option in options %}
+          <div>
+            <img src="{{ url_for('static', filename='src/' + option + '.jpg') }}" id="{{ option }}">
+          </div>
+        {% endfor %}
+      </section>
+      <header>
+        <div class="player-btn">
+          <span> Computer </span>
+        </div>
+      </header>
+    </section>
+    <!-- /The computer section -->
+  </div>
+</body>
+<script src="JS/timer.js"></script>
+
+</html>
