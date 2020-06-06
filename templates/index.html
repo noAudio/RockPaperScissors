@@ -33,7 +33,6 @@
         <section class="player-section">
           {% for option in options %}
           <div>
-            {# <input class="check-input" type="radio" aria-label="Radio button for following text input" name="game-option" value="{{ option }}" id="{{ option }}"> #}
             <label for="{{ option }}">
               <image type="image" src="{{ url_for('static', filename='src/' + option + '.jpg') }}">
               <input type="submit" class="check-input" value="{{ option }}" id="{{ option }}" name="game-option">
