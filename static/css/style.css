@@ -26,6 +26,7 @@ input {
   grid-gap: 3rem;
 }
 
+.player-section img,
 .player-section input {
   width: 70%;
   height: 238px;
