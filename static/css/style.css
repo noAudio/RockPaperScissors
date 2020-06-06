@@ -44,7 +44,7 @@ input {
 
 .placement {
   width: 50%;
-  margin: 3rem 0 3rem 29%;
+  margin: 3rem auto;
   display: flex;
 }
 
@@ -53,20 +53,6 @@ input {
   height: 30%;
   margin: 50% 35%;
   border: none;
-}
-
-.timer {
-  background: #000;
-  width: 50px;
-  height: 22px;
-  padding: .5rem;
-  margin: 2rem 1rem;
-  color: #fff;
-}
-
-.timing-box {
-  text-align: center;
-  padding: 5rem 5rem 0 0;
 }
 
 .score-status {
