@@ -10,13 +10,13 @@
   <link rel=" stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
 </head>
 
-<body>
+<body style="background-image: url('{{ url_for('static', filename='src/bg-img.jpg') }}')">
   <!-- Score display -->
   {% if outcome %}
   <div class=" score-status">
-    <span class="wins"> Points: 0 </span>
-    {% endif %}
+    <span class="wins"> {{ outcome }} </span>
   </div>
+  {% endif %}
   <!-- /Score display -->
 
   <!-- The main website -->
@@ -33,7 +33,11 @@
         <section class="player-section">
           {% for option in options %}
           <div>
-            <input type="image" src="{{ url_for('static', filename='src/' + option + '.jpg') }}" id="{{ option }}" value="{{ option }}">
+            {# <input class="check-input" type="radio" aria-label="Radio button for following text input" name="game-option" value="{{ option }}" id="{{ option }}"> #}
+            <label for="{{ option }}">
+              <image type="image" src="{{ url_for('static', filename='src/' + option + '.jpg') }}">
+              <input type="submit" class="check-input" value="{{ option }}" id="{{ option }}" name="game-option">
+            </label>
           </div>
           {% endfor %}
         </section>
@@ -46,24 +50,24 @@
 
       <section class="placement">
       {% if player %}
-        <div id="dropzone">
-          <img src="{{ url_for('static', filename='src/' + player + '.jpg') }}" width="100%" id="dropzone">
+        <div id="dropzone" class="dropzone">
+          <img src="{{ url_for('static', filename='src/' + player + '.jpg') }}" width="100%" class="dropzone" id="dropzone">
         </div>
       {% else %}
-        <div id="dropzone">
-          <img src="{{ url_for('static', filename='src/placers 2.jpg') }}" width="100%" id="dropzone">
+        <div id="dropzone" class="dropzone">
+          <img src="{{ url_for('static', filename='src/placers 2.jpg') }}" width="100%" class="dropzone" id="dropzone">
         </div>
       {% endif %}
         <div>
           <img src="{{ url_for('static', filename='src/exchange.jpg') }}" class="resize">
         </div>
         {% if computer %}
-        <div>
-          <img src="{{ url_for('static', filename='src/' + computer + '.jpg') }}" width="100%" id="dropzone">
+        <div class="dropzone">
+          <img src="{{ url_for('static', filename='src/' + computer + '.jpg') }}" width="100%" class="dropzone" id="dropzone">
         </div>
       {% else %}
-        <div>
-          <img src="{{ url_for('static', filename='src/placers 2.jpg') }}" width="100%">
+        <div class="dropzone">
+          <img src="{{ url_for('static', filename='src/placers 2.jpg') }}" width="100%" class="dropzone">
         </div>
       {% endif %}
         <div class="timing-box">
