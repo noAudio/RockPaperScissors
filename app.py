@@ -12,11 +12,14 @@ def index():
 
 @app.route('/play', methods=['POST'])
 def playFrontend():
+    # get player selection
     player = request.form['game-option']
+    # generate computer selection
     computer = computerChoice()
+
+    # calculate outcome
     outcome = play(computer, player)
-    points = 0
-    return render_template('index.html', options=options, outcome=outcome, player=player, computer=computer, points=points)
+    return render_template('index.html', options=options, outcome=outcome, player=player, computer=computer)
 
 
 if __name__ == '__main__':
