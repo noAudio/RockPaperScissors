@@ -15,7 +15,8 @@ def playFrontend():
     player = request.form['game-option']
     computer = computerChoice()
     outcome = play(computer, player)
-    return render_template('index.html', options=options, outcome=outcome, player=player, computer=computer)
+    points = 0
+    return render_template('index.html', options=options, outcome=outcome, player=player, computer=computer, points=points)
 
 
 if __name__ == '__main__':
