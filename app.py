@@ -19,6 +19,7 @@ def playFrontend():
 
     # calculate outcome
     outcome = play(computer, player)
+
     return render_template('index.html', options=options, outcome=outcome, player=player, computer=computer)
 
 
