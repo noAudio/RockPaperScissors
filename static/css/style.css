@@ -56,11 +56,11 @@ input {
 }
 
 .score-status {
-  float: right;
   margin-right: 2rem;
 }
 
 .wins {
+  float: right;
   background: #3ee916;
   color: #fff;
   padding: .5rem 2rem .5rem .5rem;
