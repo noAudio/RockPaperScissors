@@ -19,4 +19,7 @@
     .wins {
         padding: .5rem 1rem .5rem .5rem;
     }
+    .player-btn span {
+        font-size: 2.5rem;
+    }
 } 
